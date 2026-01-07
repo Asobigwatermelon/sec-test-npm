@@ -1,0 +1,42 @@
+name: Publish NPM Package
+
+on:
+  # 当推送到 main 分支时触发
+  push:
+    branches: [main]
+
+  # 当创建 release 时触发（推荐用于生产环境）
+  release:
+    types: [created]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 检出代码
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 设置 Node.js 环境
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+
+      # 发布 package-a
+      - name: Publish victim-package-a
+        run: |
+          cd npm-attack-demo/victim-packages/package-a
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # 发布 package-b
+      - name: Publish victim-package-b
+        run: |
+          cd npm-attack-demo/victim-packages/package-b
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

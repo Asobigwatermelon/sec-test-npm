@@ -1,0 +1,12 @@
+{
+  "name": "victim-package-b",
+  "version": "1.0.0",
+  "description": "Another normal utility package - Safe and secure",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["utility", "string", "tools"],
+  "author": "victim-user <victim@example.com>",
+  "license": "MIT"
+}
