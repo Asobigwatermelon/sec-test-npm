@@ -19,6 +19,7 @@ echo -e "${YELLOW}========================================${NC}"
 PACKAGES=(
   "npm-attack-demo/victim-packages/package-a"
   "npm-attack-demo/victim-packages/package-b"
+  "npm-attack-demo/victim-packages/package-c"
 )
 
 # 检查 npm 认证

@@ -40,3 +40,11 @@ jobs:
           npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # 发布 package-c
+      - name: Publish victim-package-c
+        run: |
+          cd npm-attack-demo/victim-packages/package-c
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

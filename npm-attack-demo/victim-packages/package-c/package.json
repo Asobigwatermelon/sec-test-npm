@@ -1,0 +1,12 @@
+{
+  "name": "victim-package-c",
+  "version": "1.0.0",
+  "description": "A testing package for CI/CD automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["testing", "automation", "ci-cd"],
+  "author": "victim-user <victim@example.com>",
+  "license": "MIT"
+}
